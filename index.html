@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DHG dupe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a110d;--s:#101a14;--line:#22342a;--grid:rgba(34,52,42,.55);--g:#6fd16b;--g2:#3f8f3d;--ink:#08140b;--tx:#edf3ee;--mu:#93a89a;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit;margin:0}
+html{scroll-padding-top:env(safe-area-inset-top,0px);background:var(--bg);scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font:400 1rem/1.65 Manrope,"Segoe UI",system-ui,sans-serif;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(50% 40% at 80% 0,rgba(111,209,107,.14),transparent 70%),linear-gradient(var(--grid) 1px,transparent 1px) 0 0/48px 48px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/48px 48px;-webkit-mask:linear-gradient(#000 25%,transparent 80%);mask:linear-gradient(#000 25%,transparent 80%)}
+[hidden]{display:none!important}
+.wrap{width:min(1040px,100% - 2.5rem);margin-inline:auto}
+svg.i{width:1.2em;height:1.2em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+a:focus-visible,button:focus-visible{outline:3px solid #fff;outline-offset:3px}
+
+.nav{display:flex;align-items:center;justify-content:space-between;padding:1.1rem 0;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:.6rem;color:var(--tx);text-decoration:none;font-weight:800;letter-spacing:-.01em}
+.brand svg{width:28px;height:28px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;padding:.8rem 1.5rem;font:700 .95rem/1 Manrope,"Segoe UI",sans-serif;color:var(--ink);background:var(--g);border:1px solid var(--g);cursor:pointer;text-decoration:none;box-shadow:4px 4px 0 var(--g2);transition:transform .12s,box-shadow .12s,background .12s}
+.btn:hover{background:#8be487}
+.btn:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--g2)}
+.btn.sm{padding:.55rem 1.1rem;font-size:.85rem;box-shadow:3px 3px 0 var(--g2)}
+.btn.ghost{background:transparent;color:var(--tx);border-color:var(--line);box-shadow:none}
+.btn.ghost:hover{border-color:var(--g);background:rgba(111,209,107,.08)}
+.btn.ghost:active{transform:none}
+
+.hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:3rem;align-items:center;padding:clamp(2.5rem,7vw,5rem) 0 1rem}
+h1{font-size:clamp(3rem,9vw,5.6rem);font-weight:800;letter-spacing:-.04em;line-height:1}
+.lead{max-width:30rem;margin:1.3rem 0 1.9rem;color:var(--mu);font-size:1.08rem}
+.cta{display:flex;flex-wrap:wrap;gap:1rem}
+.srv{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.7rem;padding:.2rem .6rem;border:1px solid var(--line);color:var(--mu);font-size:.7rem;line-height:1.5;cursor:default;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+.srv svg{width:11px;height:11px}
+.srv b{font-weight:600;color:var(--tx)}
+.srv span::after{content:attr(data-t)}
+
+.frame{position:relative;border:1px solid var(--line);background:radial-gradient(60% 60% at 50% 45%,rgba(111,209,107,.14),transparent 70%),linear-gradient(var(--grid) 1px,transparent 1px) 0 0/32px 32px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/32px 32px,var(--s)}
+.frame::before,.frame::after{content:"";position:absolute;width:20px;height:20px;border:2px solid var(--g);pointer-events:none;z-index:2}
+.frame::before{top:-1px;left:-1px;border-right:0;border-bottom:0}
+.frame::after{bottom:-1px;right:-1px;border-left:0;border-top:0}
+.scene{aspect-ratio:10/9}
+.scene svg{position:absolute;inset:0;width:100%;height:100%}
+.t{font:600 12px Manrope,sans-serif;fill:var(--mu);text-anchor:middle}
+.fl{animation:fl 4s ease-in-out infinite}
+
+section{padding:4rem 0 0}
+.sh{display:flex;align-items:center;gap:1.2rem;margin-bottom:1.4rem}
+.sh::after{content:"";flex:1;height:1px;background:var(--line)}
+h2{font-size:1.4rem;font-weight:800;letter-spacing:-.01em}
+.about{max-width:40rem;padding-left:1.2rem;border-left:3px solid var(--g);color:var(--mu);font-size:1.05rem}
+.about strong{color:var(--tx);font-weight:600}
+
+.video{aspect-ratio:16/9;overflow:hidden}
+.video iframe,.video video{position:absolute;inset:0;width:100%;height:100%;border:0;background:#000}
+.play{position:absolute;inset:0;margin:auto;width:76px;height:76px;display:grid;place-items:center;background:var(--g);border:0;cursor:pointer;box-shadow:5px 5px 0 var(--g2)}
+.play::after{content:"";position:absolute;inset:-12px;border:2px solid var(--g);animation:ring 2.4s ease-out infinite}
+.play svg{width:30px;fill:var(--ink);transform:translateX(2px)}
+.vtxt{position:absolute;inset-inline:0;bottom:1.1rem;text-align:center;color:var(--mu);font-size:.85rem}
+.alt{display:inline-block;margin-top:.9rem;color:var(--g);font-size:.9rem}
+
+ol{list-style:none;padding:0;display:grid;gap:2.4rem 2rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+li{position:relative;padding-top:2.1rem;border-top:1px solid var(--line)}
+li b{position:absolute;top:-1.1rem;left:0;display:grid;place-items:center;width:2.2rem;height:2.2rem;background:var(--g);color:var(--ink);font-weight:800}
+li svg{width:28px;height:28px;color:var(--g);margin-bottom:.8rem}
+h3{font-size:1.08rem;font-weight:800}
+li p{color:var(--mu);font-size:.94rem}
+
+footer{margin-top:4.5rem;padding:1.5rem 0 2.2rem;border-top:1px solid var(--line);color:var(--mu);font-size:.78rem}
+footer p{max-width:44rem}
+.toast{position:fixed;left:50%;bottom:calc(1.4rem + env(safe-area-inset-bottom,0px));transform:translate(-50%,16px);background:var(--s);color:var(--tx);padding:.65rem 1.2rem;font-size:.9rem;opacity:0;pointer-events:none;transition:.25s;z-index:9;border:1px solid var(--g)}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+@keyframes ring{from{transform:scale(.85);opacity:.9}to{transform:scale(1.45);opacity:0}}
+@keyframes fl{50%{transform:translateY(-9px)}}
+@media (max-width:820px){.hero{grid-template-columns:1fr;gap:2.5rem}.scene{max-width:440px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<g id="gb">
+<path d="M-70 0V80L0 115V35z" fill="#7a4e32"/>
+<path d="M70 0V80L0 115V35z" fill="#5c3a24"/>
+<path d="M0-35 70 0 0 35-70 0z" fill="#6bbd4f"/>
+<path d="M-70 0 0 35v14l-14-7v10l-14-7v8l-14-7v8l-14-7L-70 40z" fill="#4f9a3a"/>
+<path d="M70 0 0 35v14l14-7v10l14-7v8l14-7v8l14-7L70 40z" fill="#3c7a2c"/>
+<path d="M-18-6l7 3.5-7 3.5-7-3.5zM22-4l7 3.5-7 3.5-7-3.5zM-2 14l7 3.5-7 3.5-7-3.5z" fill="rgba(0,0,0,.14)"/>
+<path d="M-50 62l8 4-8 4-8-4zM-22 84l8 4-8 4-8-4zM28 70l8-4 8 4-8 4zM46 62l8-4 8 4-8 4z" fill="rgba(0,0,0,.2)"/>
+<path d="M0-35 70 0V80L0 115-70 80V0zM-70 0 0 35 70 0M0 35v80" fill="none" stroke="#050a07" stroke-width="2" stroke-linejoin="round"/>
+</g>
+<path id="gg" d="M0-35 70 0V80L0 115-70 80V0zM-70 0 0 35 70 0M0 35v80" fill="rgba(111,209,107,.08)" stroke="#6fd16b" stroke-width="1.6" stroke-dasharray="5 5" stroke-linejoin="round"/>
+</defs></svg>
+
+<div class="wrap">
+<header class="nav">
+  <a class="brand" href="#top"><svg viewBox="-80 -40 160 160" aria-hidden="true"><use href="#gb"/></svg>DHG dupe</a>
+  <a class="btn sm" href="#top" data-dl>Download</a>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div>
+      <h1>DHG dupe</h1>
+      <p class="lead">A duplication mod for the TrexMine server. Download it, place it in your mods folder, and join.</p>
+      <div class="cta">
+        <a class="btn" href="#top" data-dl><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-5-5m5 5 5-5M5 20h14"/></svg>Download mod</a>
+        <a class="btn ghost" href="#demo">Watch demo</a>
+      </div>
+      <div class="srv" id="srv" aria-label="Server address">
+        <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+        <b>Server</b><span id="sv"></span>
+      </div>
+    </div>
+
+    <div class="frame scene" aria-hidden="true">
+      <svg viewBox="0 0 400 360">
+        <g fill="#6fd16b" opacity=".4"><rect x="40" y="52" width="6" height="6"/><rect x="338" y="74" width="6" height="6"/><rect x="62" y="300" width="6" height="6"/><rect x="352" y="290" width="6" height="6"/><rect x="330" y="36" width="4" height="4"/><rect x="24" y="180" width="4" height="4"/></g>
+        <path d="M199 125C250 125 275 140 275 168" fill="none" stroke="#6fd16b" stroke-width="1.6" stroke-dasharray="3 4"/>
+        <path d="M269 162l6 9 6-9" fill="none" stroke="#6fd16b" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <g transform="translate(125 125)"><use href="#gb"/></g>
+        <g transform="translate(275 215)"><g class="fl"><use href="#gg"/></g></g>
+        <text class="t" x="125" y="268">Original</text>
+        <text class="t" x="275" y="350">Copy</text>
+      </svg>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="sh"><h2>What is duping?</h2></div>
+    <p class="about"><strong>Duping is the duplication of in-game items</strong>: one becomes two. DHG dupe is a mod made for this purpose on the TrexMine server.</p>
+  </section>
+
+  <section id="demo">
+    <div class="sh"><h2>Demo video</h2></div>
+    <div class="frame video" id="video">
+      <button class="play" id="play" type="button" aria-label="Play video"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+      <div class="vtxt" id="vtxt">Video coming soon</div>
+    </div>
+    <a class="alt" id="alt" target="_blank" rel="noopener" hidden>Open video in a new tab</a>
+  </section>
+
+  <section id="install">
+    <div class="sh"><h2>Installation</h2></div>
+    <ol>
+      <li><b>1</b>
+        <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-5-5m5 5 5-5M5 20h14"/></svg>
+        <h3>Download</h3><p>Get the mod file using the download button.</p></li>
+      <li><b>2</b>
+        <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+        <h3>Install</h3><p>Copy the file into your Minecraft mods folder.</p></li>
+      <li><b>3</b>
+        <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v11H3zM8 20h8M12 16v4"/></svg>
+        <h3>Join</h3><p>Launch the game and connect to the TrexMine server.</p></li>
+    </ol>
+  </section>
+</main>
+
+<footer>
+  <p>DHG dupe is an unofficial project and is not affiliated with TrexMine or Mojang. Its use may violate server rules and is entirely at your own risk.</p>
+</footer>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+// Set your links here: video = YouTube URL or direct .mp4 file, download = mod file URL
+const CFG = { video: "https://yourimageshare.com/ib/j6BVoD83mf.mp4", download: "" };
+
+const $ = s => document.querySelector(s);
+let tt;
+function toast(t){const e=$("#toast");e.textContent=t;e.classList.add("on");clearTimeout(tt);tt=setTimeout(()=>e.classList.remove("on"),2200)}
+
+document.querySelectorAll("[data-dl]").forEach(a=>{
+  if(CFG.download){a.href=CFG.download;a.target="_blank";a.rel="noopener"}
+  else a.addEventListener("click",e=>{e.preventDefault();toast("Download link coming soon")});
+});
+
+// Server address is drawn by CSS only (not selectable), and copy actions are blocked
+$("#sv").dataset.t=["play","trexmine","com"].join(".");
+["copy","cut","contextmenu","dragstart","selectstart"].forEach(ev=>$("#srv").addEventListener(ev,e=>e.preventDefault()));
+
+if(CFG.video){$("#vtxt").hidden=true;$("#alt").href=CFG.video;$("#alt").hidden=false}
+function startVideo(){
+  const v=CFG.video;
+  if(!v)return toast("Video has not been added yet");
+  const yt=v.match(/(?:youtu\.be\/|v=|embed\/)([\w-]{11})/);
+  let el;
+  if(yt){el=document.createElement("iframe");el.src="https://www.youtube-nocookie.com/embed/"+yt[1]+"?autoplay=1&mute=1&rel=0";el.allow="autoplay; fullscreen";el.allowFullscreen=true}
+  else{el=document.createElement("video");el.muted=true;el.defaultMuted=true;el.controls=true;el.autoplay=true;el.playsInline=true;el.loop=true;el.src=v}
+  $("#video").replaceChildren(el);
+}
+$("#play").addEventListener("click",startVideo);
+if(CFG.video)startVideo();
+
+function scrollToDemoOnLoad(){
+  if(window.matchMedia("(prefers-reduced-motion: reduce)").matches||window.location.hash||window.scrollY>0)return;
+  const demo=$("#demo");
+  if(!demo)return;
+  let cancelled=false;
+  let frame;
+  let delay;
+  const events=["wheel","touchstart","pointerdown","keydown"];
+  function cleanup(){
+    clearTimeout(delay);
+    cancelAnimationFrame(frame);
+    events.forEach(event=>window.removeEventListener(event,cancel));
+  }
+  function cancel(){cancelled=true;cleanup()}
+  events.forEach(event=>window.addEventListener(event,cancel,{passive:true}));
+  delay=setTimeout(()=>{
+    if(cancelled)return;
+    const start=window.scrollY;
+    const target=Math.max(0,Math.min(demo.getBoundingClientRect().top+start,document.documentElement.scrollHeight-window.innerHeight));
+    if(target<=start){cleanup();return}
+    const started=performance.now();
+    function animate(now){
+      if(cancelled)return;
+      const progress=Math.min((now-started)/3500,1);
+      const eased=progress*progress*(3-2*progress);
+      window.scrollTo({top:start+(target-start)*eased,behavior:"instant"});
+      if(progress<1)frame=requestAnimationFrame(animate);
+      else cleanup();
+    }
+    frame=requestAnimationFrame(animate);
+  },700);
+}
+if(document.readyState==="complete")scrollToDemoOnLoad();
+else window.addEventListener("load",scrollToDemoOnLoad,{once:true});
+</script>
+</body>
+</html>
